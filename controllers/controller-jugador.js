@@ -19,6 +19,7 @@ module.exports={
             const result=new books(req.body)
             const author=await authors.findById(id)
             if(author){
+                result.team=id  
                 const book=await result.save()
                
                 return res.status(200).json({state:true,data:book})
@@ -36,26 +37,28 @@ module.exports={
     },updateBooks: async (req, res) => {
         try {
             const { id } = req.params;
-            const { code, name,edad,posicion,newAuthorId } = req.body;
+            const { code, name,edad,posicion,team } = req.body;
             const book = await books.findById(id);
             if (book) {
                 // Encuentra el autor antiguo 
                 const oldAuthor = await authors.findById(book.team);
                 if (oldAuthor) {
+                    console.log("entro aqui")
                 // Encuentra el nuevo autor 
-                const newAuthor = await authors.findById(newAuthorId);
+                const newAuthor = await authors.findById(team);
                 if (newAuthor) {
-                   
+                    console.log("entro aqui x2")
                     // Actualiza el libro
                 book.code = code;
                 book.name = name;
                 book.edad = edad;
                 book.posicion = posicion;   
-                book.team= newAuthorId;
+                book.team= team;
 
                 const updatedBook = await book.save();
-                }
                 return res.status(200).json({ state: true, data: updatedBook });
+                }
+                
                 }
                 else{
                     return res.status(404).json({ message: "team no existe" });
@@ -80,7 +83,7 @@ module.exports={
             }
             else{
                 
-                return res.status(404).json({ message: "Libro no existe" });
+                return res.status(404).json({ message: "jugador no existe" });
             }    
 
         }catch(err){

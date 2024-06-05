@@ -48,4 +48,25 @@ Este proyecto utiliza Node.js en la versión 16.20.1.
          "edad": 20,
          "posicion": "delantero"
      }
-     ```
+    ```
+ 6. **Eliminar Jugadores**
+   - URL: `http://localhost:3001/jugador/665fb5505ae031d95e927f36`
+   - Método HTTP: `DELETE`
+   - Descripción: Obtiene la lista de todos los jugadores.
+6. **Eliminar Jugadores**
+   - URL: `http://localhost:3001/jugador/665fb6185ae031d95e927f40`
+   - Método HTTP: `Put`
+   - Descripción: Obtiene la lista de todos los jugadores.
+    - Body:
+     ```json
+     {
+        "code": "1",
+        "name": "pele",
+        "edad":50,
+        "posicion":"delantero",
+        "team":"665f29dd0732e32db9d9617e"
+     }
+    ```
+
+
+    
