@@ -13,11 +13,13 @@ module.exports={
 
         }
     },
+    
     saveBooks:async(req,res)=>{
         try{
             const {id}=req.params
             const result=new books(req.body)
             const author=await authors.findById(id)
+            const consulta=await books.findOne({code:result.code})
             if(author){
                 result.team=id  
                 const book=await result.save()
@@ -91,5 +93,15 @@ module.exports={
             return res.status(500).json({state:false,err:err})
 
         }
-    }
+    },findById : async( req,res )=>{
+        try{
+          const {id} = req.params
+          const result = await books.findById(id)
+    
+          return res.status(200).json({data:result})
+        }catch(err){
+            console.log(err)
+          return res.status(500).json({error:err})
+        }
+      },
 }

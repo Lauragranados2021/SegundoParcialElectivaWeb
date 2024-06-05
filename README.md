@@ -5,6 +5,9 @@ Este proyecto utiliza Node.js en la versión 16.20.1.
 ## Requisitos
 
 - Node.js v16.20.1
+## PREFIJOS
+-/teams
+-/jugador
 
 ## Endpoints
 
@@ -37,26 +40,10 @@ Este proyecto utiliza Node.js en la versión 16.20.1.
      }
      ```
 5. **EditarJugadore**
-    -URL:`http://localhost:3001/jugador/`
-    - Método HTTP: `POST`
-    - Descripción: Guarda un nuevo jugador.
-    - Body:
-     ```json
-     {
-         "code": "1",
-         "name": "pele",
-         "edad": 20,
-         "posicion": "delantero"
-     }
-    ```
- 6. **Eliminar Jugadores**
-   - URL: `http://localhost:3001/jugador/665fb5505ae031d95e927f36`
-   - Método HTTP: `DELETE`
-   - Descripción: Obtiene la lista de todos los jugadores.
-6. **Eliminar Jugadores**
+
    - URL: `http://localhost:3001/jugador/665fb6185ae031d95e927f40`
    - Método HTTP: `Put`
-   - Descripción: Obtiene la lista de todos los jugadores.
+   - Descripción: edita los jugadores.
     - Body:
      ```json
      {
@@ -66,7 +53,12 @@ Este proyecto utiliza Node.js en la versión 16.20.1.
         "posicion":"delantero",
         "team":"665f29dd0732e32db9d9617e"
      }
-    ```
+     ```
+7. **Traer los jugadores por ID** 
+   - URL: `http://localhost:3001/jugador/665fb6185ae031d95e927f40`
+   - Método HTTP: `GET`
+   - Descripción: Obtiene los detalles del jugador por el  id 
+   
 
 
     

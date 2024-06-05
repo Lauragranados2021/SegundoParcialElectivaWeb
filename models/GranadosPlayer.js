@@ -5,7 +5,7 @@ const SchemaGranadosPlayer=new Schema({
     code: {
         type : Number,
         required : true,
-        unique : true
+       
     },
     name: {
         type: String,
