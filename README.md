@@ -39,8 +39,7 @@ Este proyecto utiliza Node.js en la versión 16.20.1.
          "posicion": "delantero"
      }
      ```
-5. **EditarJugadore**
-
+5. **EditarJugadores**
    - URL: `http://localhost:3001/jugador/665fb6185ae031d95e927f40`
    - Método HTTP: `Put`
    - Descripción: edita los jugadores.
@@ -58,7 +57,10 @@ Este proyecto utiliza Node.js en la versión 16.20.1.
    - URL: `http://localhost:3001/jugador/665fb6185ae031d95e927f40`
    - Método HTTP: `GET`
    - Descripción: Obtiene los detalles del jugador por el  id 
-   
+8. **Eliminar Jugadores** 
+   - URL: `http://localhost:3001/jugador/665fb6185ae031d95e927f40`
+   - Método HTTP: `DELETE`
+   - Descripción: elimina jugadores por su id 
 
 
     
